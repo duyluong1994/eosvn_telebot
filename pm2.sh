@@ -1,0 +1,1 @@
+pm2 start npm --name "eosvn_telebot" -- start --exp-backoff-restart-delay=100
