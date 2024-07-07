@@ -4,7 +4,7 @@
   "description": "eos vn community bot to check and verify RAM of telegram user then determine their permissions.",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node dist/src/index.js",
     "build": "tsc",
     "dev": "nodemon --exec ts-node src/index.ts"
   },
