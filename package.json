@@ -1,0 +1,20 @@
+{
+  "name": "community_tele_bot",
+  "version": "1.0.0",
+  "description": "eos vn community bot to check and verify RAM of telegram user then determine their permissions.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10"
+  }
+}
