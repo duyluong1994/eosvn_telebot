@@ -1,0 +1,560 @@
+{
+    "version": "eosio::abi/1.2",
+    "types": [],
+    "structs": [
+        {
+            "base": "",
+            "name": "addrenttoken",
+            "fields": [
+                {
+                    "name": "token",
+                    "type": "extended_symbol"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "addtokenlog",
+            "fields": [
+                {
+                    "name": "rent_token_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "token",
+                    "type": "extended_symbol"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "borrow",
+            "fields": [
+                {
+                    "name": "bytes",
+                    "type": "uint64"
+                },
+                {
+                    "name": "contract",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "borrow_row",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                },
+                {
+                    "name": "bytes",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "borrowlog",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "bytes",
+                    "type": "int64"
+                },
+                {
+                    "name": "total_borrow",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "claim",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "config_row",
+            "fields": [
+                {
+                    "name": "disabled_deposit",
+                    "type": "bool"
+                },
+                {
+                    "name": "disabled_withdraw",
+                    "type": "bool"
+                },
+                {
+                    "name": "deposit_fee_ratio",
+                    "type": "uint16"
+                },
+                {
+                    "name": "withdraw_fee_ratio",
+                    "type": "uint16"
+                },
+                {
+                    "name": "max_deposit_limit",
+                    "type": "uint64"
+                },
+                {
+                    "name": "reward_dao_ratio",
+                    "type": "uint16"
+                },
+                {
+                    "name": "usage_limit_ratio",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "deposit_row",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                },
+                {
+                    "name": "bytes",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "depositlog",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "bytes",
+                    "type": "uint64"
+                },
+                {
+                    "name": "fee",
+                    "type": "uint64"
+                },
+                {
+                    "name": "deposited_bytes",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "extended_symbol",
+            "fields": [
+                {
+                    "name": "sym",
+                    "type": "symbol"
+                },
+                {
+                    "name": "contract",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "maxdeposit",
+            "fields": [
+                {
+                    "name": "max_deposit_limit",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "rent_row",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "total_rent_received",
+                    "type": "extended_asset"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "rent_token_row",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "token",
+                    "type": "extended_symbol"
+                },
+                {
+                    "name": "total_rent_received",
+                    "type": "uint64"
+                },
+                {
+                    "name": "acc_per_share",
+                    "type": "uint128"
+                },
+                {
+                    "name": "last_reward_time",
+                    "type": "time_point_sec"
+                },
+                {
+                    "name": "total_reward",
+                    "type": "uint64"
+                },
+                {
+                    "name": "reward_balance",
+                    "type": "uint64"
+                },
+                {
+                    "name": "enabled",
+                    "type": "bool"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "repaylog",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "bytes",
+                    "type": "int64"
+                },
+                {
+                    "name": "total_borrow",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "rewardlog",
+            "fields": [
+                {
+                    "name": "token",
+                    "type": "extended_symbol"
+                },
+                {
+                    "name": "stake_reward",
+                    "type": "uint64"
+                },
+                {
+                    "name": "dao_reward",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "stat_row",
+            "fields": [
+                {
+                    "name": "deposited_bytes",
+                    "type": "uint64"
+                },
+                {
+                    "name": "used_bytes",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "statlog",
+            "fields": [
+                {
+                    "name": "total_deposit",
+                    "type": "uint64"
+                },
+                {
+                    "name": "total_borrow",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "statuslog",
+            "fields": [
+                {
+                    "name": "rent_token_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "enabled",
+                    "type": "bool"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "tokenstatus",
+            "fields": [
+                {
+                    "name": "rent_token_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "enabled",
+                    "type": "bool"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "updateratio",
+            "fields": [
+                {
+                    "name": "deposit_fee_ratio",
+                    "type": "uint16"
+                },
+                {
+                    "name": "withdraw_fee_ratio",
+                    "type": "uint16"
+                },
+                {
+                    "name": "reward_dao_ratio",
+                    "type": "uint16"
+                },
+                {
+                    "name": "usage_limit_ratio",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "updatestatus",
+            "fields": [
+                {
+                    "name": "disabled_deposit",
+                    "type": "bool"
+                },
+                {
+                    "name": "disabled_withdraw",
+                    "type": "bool"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "user_reward_row",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "token",
+                    "type": "extended_symbol"
+                },
+                {
+                    "name": "debt",
+                    "type": "uint64"
+                },
+                {
+                    "name": "unclaimed",
+                    "type": "uint64"
+                },
+                {
+                    "name": "claimed",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "withdraw",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "bytes",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "withdrawlog",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "bytes",
+                    "type": "uint64"
+                },
+                {
+                    "name": "fee",
+                    "type": "uint64"
+                },
+                {
+                    "name": "deposited_bytes",
+                    "type": "uint64"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "addrenttoken",
+            "type": "addrenttoken",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "addtokenlog",
+            "type": "addtokenlog",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "borrow",
+            "type": "borrow",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "borrowlog",
+            "type": "borrowlog",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "claim",
+            "type": "claim",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "depositlog",
+            "type": "depositlog",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "maxdeposit",
+            "type": "maxdeposit",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "repaylog",
+            "type": "repaylog",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "rewardlog",
+            "type": "rewardlog",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "statlog",
+            "type": "statlog",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "statuslog",
+            "type": "statuslog",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "tokenstatus",
+            "type": "tokenstatus",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "updateratio",
+            "type": "updateratio",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "updatestatus",
+            "type": "updatestatus",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "withdraw",
+            "type": "withdraw",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "withdrawlog",
+            "type": "withdrawlog",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "borrows",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "borrow_row"
+        },
+        {
+            "name": "config",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "config_row"
+        },
+        {
+            "name": "deposits",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "deposit_row"
+        },
+        {
+            "name": "rents",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "rent_row"
+        },
+        {
+            "name": "renttokens",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "rent_token_row"
+        },
+        {
+            "name": "stat",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "stat_row"
+        },
+        {
+            "name": "userrewards",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "user_reward_row"
+        }
+    ],
+    "ricardian_clauses": [],
+    "error_messages": [],
+    "abi_extensions": [],
+    "variants": [],
+    "action_results": []
+}

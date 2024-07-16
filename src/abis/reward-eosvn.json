@@ -1,0 +1,196 @@
+{
+    "version": "eosio::abi/1.2",
+    "types": [],
+    "structs": [
+        {
+            "base": "",
+            "name": "addrewards",
+            "fields": [
+                {
+                    "name": "wallet",
+                    "type": "name"
+                },
+                {
+                    "name": "tokens",
+                    "type": "extended_asset[]"
+                },
+                {
+                    "name": "asset_ids",
+                    "type": "uint64[]"
+                },
+                {
+                    "name": "days_until_expired",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "adminaction",
+            "fields": []
+        },
+        {
+            "base": "",
+            "name": "claimrewards",
+            "fields": [
+                {
+                    "name": "wallet",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "member",
+            "fields": [
+                {
+                    "name": "telegram_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "account",
+                    "type": "name"
+                },
+                {
+                    "name": "verified_at",
+                    "type": "time_point_sec"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "regmember",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                },
+                {
+                    "name": "telegram_id",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "rmrewards",
+            "fields": [
+                {
+                    "name": "wallet",
+                    "type": "name"
+                },
+                {
+                    "name": "reward_ids",
+                    "type": "uint64[]"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "scope",
+            "fields": [
+                {
+                    "name": "wallet",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "unregmember",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "vnreward",
+            "fields": [
+                {
+                    "name": "reward_id",
+                    "type": "uint64"
+                },
+                {
+                    "name": "tokens",
+                    "type": "extended_asset[]"
+                },
+                {
+                    "name": "asset_ids",
+                    "type": "uint64[]"
+                },
+                {
+                    "name": "expired_at",
+                    "type": "time_point"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "addrewards",
+            "type": "addrewards",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "adminaction",
+            "type": "adminaction",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "claimrewards",
+            "type": "claimrewards",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "regmember",
+            "type": "regmember",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "rmrewards",
+            "type": "rmrewards",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "unregmember",
+            "type": "unregmember",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "members",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "member"
+        },
+        {
+            "name": "scopes",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "scope"
+        },
+        {
+            "name": "vnrewards",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "vnreward"
+        }
+    ],
+    "ricardian_clauses": [],
+    "error_messages": [],
+    "abi_extensions": [],
+    "variants": [],
+    "action_results": [
+        {
+            "name": "claimrewards",
+            "result_type": "string"
+        }
+    ]
+}

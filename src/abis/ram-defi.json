@@ -1,0 +1,309 @@
+{
+    "version": "eosio::abi/1.2",
+    "types": [],
+    "structs": [
+        {
+            "base": "",
+            "name": "config_row",
+            "fields": [
+                {
+                    "name": "disabled_deposit",
+                    "type": "bool"
+                },
+                {
+                    "name": "disabled_withdraw",
+                    "type": "bool"
+                },
+                {
+                    "name": "deposit_fee_ratio",
+                    "type": "uint16"
+                },
+                {
+                    "name": "withdraw_fee_ratio",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "create",
+            "fields": [
+                {
+                    "name": "issuer",
+                    "type": "name"
+                },
+                {
+                    "name": "maximum_supply",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "depositlog",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "fee",
+                    "type": "asset"
+                },
+                {
+                    "name": "output_amount",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "depositram",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "bytes",
+                    "type": "int64"
+                },
+                {
+                    "name": "fee",
+                    "type": "asset"
+                },
+                {
+                    "name": "output_amount",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "s_account",
+            "fields": [
+                {
+                    "name": "balance",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "s_stat",
+            "fields": [
+                {
+                    "name": "supply",
+                    "type": "asset"
+                },
+                {
+                    "name": "max_supply",
+                    "type": "asset"
+                },
+                {
+                    "name": "issuer",
+                    "type": "name"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "transfer",
+            "fields": [
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "memo",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "transferlog",
+            "fields": [
+                {
+                    "name": "from",
+                    "type": "name"
+                },
+                {
+                    "name": "to",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "from_balance",
+                    "type": "asset"
+                },
+                {
+                    "name": "to_balance",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "updateratio",
+            "fields": [
+                {
+                    "name": "deposit_fee_ratio",
+                    "type": "uint16"
+                },
+                {
+                    "name": "withdraw_fee_ratio",
+                    "type": "uint16"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "updatestatus",
+            "fields": [
+                {
+                    "name": "disabled_deposit",
+                    "type": "bool"
+                },
+                {
+                    "name": "disabled_withdraw",
+                    "type": "bool"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "withdrawlog",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "fee",
+                    "type": "asset"
+                },
+                {
+                    "name": "output_amount",
+                    "type": "asset"
+                }
+            ]
+        },
+        {
+            "base": "",
+            "name": "withdrawram",
+            "fields": [
+                {
+                    "name": "owner",
+                    "type": "name"
+                },
+                {
+                    "name": "quantity",
+                    "type": "asset"
+                },
+                {
+                    "name": "fee",
+                    "type": "asset"
+                },
+                {
+                    "name": "output_amount",
+                    "type": "int64"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "create",
+            "type": "create",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "depositlog",
+            "type": "depositlog",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "depositram",
+            "type": "depositram",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "transfer",
+            "type": "transfer",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "transferlog",
+            "type": "transferlog",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "updateratio",
+            "type": "updateratio",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "updatestatus",
+            "type": "updatestatus",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "withdrawlog",
+            "type": "withdrawlog",
+            "ricardian_contract": ""
+        },
+        {
+            "name": "withdrawram",
+            "type": "withdrawram",
+            "ricardian_contract": ""
+        }
+    ],
+    "tables": [
+        {
+            "name": "accounts",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "s_account"
+        },
+        {
+            "name": "config",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "config_row"
+        },
+        {
+            "name": "stat",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": [],
+            "type": "s_stat"
+        }
+    ],
+    "ricardian_clauses": [],
+    "error_messages": [],
+    "abi_extensions": [],
+    "variants": [],
+    "action_results": []
+}
