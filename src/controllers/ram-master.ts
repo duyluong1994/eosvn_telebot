@@ -21,11 +21,8 @@ const checkRamBalance = async (accountName: string) => {
         client,
     });
     const nativeRam = await eosioContract.get(undefined, { scope: accountName });
-    if (!nativeRam) {
-        console.log(accountName, "not found native RAM");
-    } else {
+    if (nativeRam) {
         totalbytes = nativeRam.ram_bytes.toNumber();
-
     }
 
     // Get BRAM balance from DEFIBOX
@@ -36,12 +33,8 @@ const checkRamBalance = async (accountName: string) => {
         client,
     });
     const bram = await ramDefiContract.get(undefined, { scope: accountName });
-    if (!bram) {
-        console.log(accountName, "not found BRAM");
-
-    } else {
+    if (bram) {
         totalbytes += bram.balance.units.toNumber();
-
     }
 
     // Get WRAM balance from eosio.wram
@@ -52,12 +45,8 @@ const checkRamBalance = async (accountName: string) => {
         client,
     });
     const wram = await wramContract.get(undefined, { scope: accountName });
-    if (!wram) {
-        console.log(accountName, "not found WRAM");
-
-    } else {
+    if (wram) {
         totalbytes += wram.balance.units.toNumber();
-
     }
 
     // GET RAM bytes from rambank.eos
@@ -68,12 +57,8 @@ const checkRamBalance = async (accountName: string) => {
         client,
     });
     const rambank = await rambankEosContract.get(accountName);
-    if (!rambank) {
-        console.log(accountName, "not found rambank");
-
-    } else {
+    if (rambank) {
         totalbytes += rambank.bytes.toNumber();
-
     }
 
     return {
