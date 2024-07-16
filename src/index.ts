@@ -90,7 +90,7 @@ bot.on('message', async (ctx: any) => {
     const userId = ctx.from.id;
     // check user in the group
     if (ctx.update.message.chat.id == EOSVN_BP_CHAT_ID) {
-        const member: any = getMember(userId);
+        const member: any = await getMember(userId);
         if (!member) {
             // await bot.telegram.sendMessage(userId, `Tài khoản của bạn chưa được xác thực. Hãy sử dụng lệnh /register để đăng ký thành viên.`).catch((err: any) => {
             //     console.log(err);
