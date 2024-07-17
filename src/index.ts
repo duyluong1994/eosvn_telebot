@@ -1,5 +1,7 @@
 // const { Telegraf } = require('telegraf');
+import fs from 'fs';
 import cron from 'node-cron';
+import path from 'path';
 import { Telegraf } from 'telegraf';
 import { EOSVN_BP_CHAT_ID, TELEGRAM_BOT_TOKEN } from '../constants';
 import { checkRamBalance, checkRamRules, getMember, memberRamManage } from './controllers/ram-master';
@@ -10,8 +12,19 @@ const bot = new Telegraf(TELEGRAM_BOT_TOKEN);
 bot.start((ctx: any) => {
     ctx.reply('Welcome!')
 });
-bot.help((ctx: any) => {
-    ctx.reply(`Nếu bạn có vấn đề gì trong quá trình xác thực thì liên hệ sys admin qua: https://t.me/mr_eosio`);
+bot.help(async (ctx: any) => {
+    const chatId = ctx.chat.id;
+    await bot.telegram.sendPhoto(chatId, { source: fs.createReadStream(path.join(__dirname, `./assets/regmem1.jpg`)) }).catch((err) => {
+        console.log(err);
+    });
+    await bot.telegram.sendPhoto(chatId, { source: fs.createReadStream(path.join(__dirname, `./assets/regmem2.jpg`)) }).catch((err) => {
+        console.log(err);
+    });
+    await bot.telegram.sendPhoto(chatId, { source: fs.createReadStream(path.join(__dirname, `./assets/regmem3.jpg`)) }).catch((err) => {
+        console.log(err);
+    });
+
+    await ctx.reply(`Nếu bạn có vấn đề gì trong quá trình xác thực thì liên hệ sys admin qua: https://t.me/mr_eosio`);
 });
 
 bot.command("register", privateChatOnly, async (ctx: any) => {
@@ -25,6 +38,16 @@ bot.command("register", privateChatOnly, async (ctx: any) => {
             \nĐiền *EOS account* của bạn vào mục *account* và điền số định danh\\: *${userId}* của bạn vào mục *telegram\\_id*\\.
             \nĐịa chỉ hợp đồng thông minh\\: [EOSVN Smart Contract](https\\://bloks\\.io\\/account\\/reward\\.eosvn\\?loadContract\\=true\\&tab\\=Actions\\&account\\=reward\\.eosvn\\&scope\\=reward\\.eosvn\\&limit\\=100\\&action\\=unregmember)
         `, { parse_mode: 'MarkdownV2' });
+
+    await bot.telegram.sendPhoto(userId, { source: fs.createReadStream(path.join(__dirname, `./assets/regmem1.jpg`)) }).catch((err) => {
+        console.log(err);
+    });
+    await bot.telegram.sendPhoto(userId, { source: fs.createReadStream(path.join(__dirname, `./assets/regmem2.jpg`)) }).catch((err) => {
+        console.log(err);
+    });
+    await bot.telegram.sendPhoto(userId, { source: fs.createReadStream(path.join(__dirname, `./assets/regmem3.jpg`)) }).catch((err) => {
+        console.log(err);
+    });
 });
 bot.command("verify", privateChatOnly, async (ctx: any) => {
     const userId = ctx.from.id;
