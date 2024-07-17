@@ -19,11 +19,11 @@ bot.command("register", privateChatOnly, async (ctx: any) => {
     const member = await getMember(userId);
     if (member) {
         await ctx.reply(`Bạn đã đăng ký thành viên với tài khoản: ${member.account} từ ngày ${member.verified_at.toDate()}. \nHãy kiểm tra lại thông tin và xác thực tài khoản bằng lệnh /verify`);
-        return;
+        // return;
     }
     await ctx.reply(`Hãy dùng EOS account có sở hữu 1 trong các loại tài sản sau: RAM, BRAM, WRAM, RAMS hoặc đã gửi cho RAMS DAO thuê để kí giao dịch đăng ký thành viên __*regmember*__ ở hợp đồng thông minh __*reward\\.eosvn*__ \\. 
             \nĐiền *EOS account* của bạn vào mục *account* và điền số định danh\\: *${userId}* của bạn vào mục *telegram\\_id*\\.
-            \nĐịa chỉ hợp đồng thông minh\\: [EOSVN Smart Contract](https\\://eosauthority\\.com\\/account\\/reward\\.eosvn\\?network\\=eos\\&scope\\=reward\\.eosvn\\&table\\=members\\&limit\\=10\\&index\\_position\\=1\\&key\\_type=i64\\&reverse\\=0\\&mode\\=contract\\&sub\\=actions\\&action\\=regmember)
+            \nĐịa chỉ hợp đồng thông minh\\: [EOSVN Smart Contract](https\\://bloks\\.io\\/account\\/reward\\.eosvn\\?loadContract\\=true\\&tab\\=Actions\\&account\\=reward\\.eosvn\\&scope\\=reward\\.eosvn\\&limit\\=100\\&action\\=unregmember)
         `, { parse_mode: 'MarkdownV2' });
 });
 bot.command("verify", privateChatOnly, async (ctx: any) => {
