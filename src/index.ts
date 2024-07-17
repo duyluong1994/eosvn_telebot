@@ -68,6 +68,10 @@ bot.command("verify", privateChatOnly, async (ctx: any) => {
 bot.command("balance", privateChatOnly, async (ctx: any) => {
     const userId = ctx.from.id;
     const member = await getMember(userId);
+    if (!member) {
+        await ctx.reply(`Bạn chưa đăng ký thành viên. Hãy sử dụng lệnh /register để đăng ký thành viên.`);
+        return;
+    }
     const ramBalance = await checkRamBalance(String(member.account));
     await ctx.reply(`Tài khoản: ${member.account}
 - RAM: ${ramBalance.ram} bytes
