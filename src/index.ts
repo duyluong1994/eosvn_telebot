@@ -29,6 +29,10 @@ bot.command("register", privateChatOnly, async (ctx: any) => {
 bot.command("verify", privateChatOnly, async (ctx: any) => {
     const userId = ctx.from.id;
     const member = await getMember(userId);
+    if (!member) {
+        await ctx.reply(`Bạn chưa đăng ký thành viên. Hãy sử dụng lệnh /register để đăng ký thành viên.`);
+        return;
+    }
     const ramBalance = await checkRamBalance(String(member.account));
     const { isPassed, bytes_to_pass } = checkRamRules(ramBalance.totalbytes, member.verified_at.toDate());
 
