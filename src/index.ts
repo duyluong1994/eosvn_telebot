@@ -14,6 +14,17 @@ bot.start((ctx: any) => {
 });
 bot.help(async (ctx: any) => {
     const chatId = ctx.chat.id;
+
+    await ctx.reply(`Để tham gia EOS RAM VN Community, bạn cần đăng ký thành viên và xác thực tài khoản bằng cách inbox với bot (https://t.me/eosvn_bot) và thực hiện theo hướng dẫn sau:`);
+    await ctx.reply(`Sử dụng lệnh /register để đăng ký thành viên.`);
+    await ctx.reply(`Sử dụng lệnh /verify để xác thực tài khoản và nhận link tham gia nhóm`);
+    await ctx.reply(`Quy tắc tham gia cộng đồng:
+        - Mỗi thành viên cần có ít nhất 1MB RAM (1048576 bytes) trong tuần đầu tiên sau khi đăng ký thành viên
+        - Sau mỗi tuần, mỗi thành viên cần có thêm 1MB RAM (1048576 bytes) so với tuần trước
+        - Từ tuần thứ 5, mỗi thành viên cần có tổng cộng 5MB RAM (5242880 bytes)
+        - Nếu không đủ RAM, bạn sẽ bị loại khỏi cộng đồng
+        - Để tham gia lại, bạn cần có đủ RAM theo quy tắc trên và xác thực lại tài khoản qua lệnh /verify `);
+
     await bot.telegram.sendPhoto(chatId, { source: fs.createReadStream(path.join(__dirname, `./assets/regmem1.jpg`)) }).catch((err) => {
         console.log(err);
     });
